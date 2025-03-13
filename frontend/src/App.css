@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-@root {
+.root {
    --bg-primary: #FFce1a;
    --bg-secondary: #0d0842;
    --bg-favorite: #FF5841;

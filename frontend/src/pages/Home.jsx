@@ -1,11 +1,16 @@
+import React from 'react';
+import Banner from './Banner';
+import TopSallers from './TopSallers';  
 
-
-const Hompe = () => {
+const Home = () => {
     return (
         <>
+        <Banner />  
+        <TopSallers />
+
         
         </>
     );
 }
 
-export default Home;
+export default Home;  
