@@ -30,9 +30,8 @@ const Navbar = () => {
     // display dropdown menu when user is logged in
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     // test output
-    console.log(isDropdownOpen);
     // when there is no user logged in
-    const curent_user = true;
+    const curent_user = false;
 
     return (
         <header className="max-w-screen-2xl mx-auto px-10 py-6 fixed top-0 left-0 w-full bg-white">
