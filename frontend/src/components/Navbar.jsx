@@ -35,7 +35,7 @@ const Navbar = () => {
     const curent_user = true;
 
     return (
-        <header className="max-w-screen-2xl mx-auto px-10 py-6">
+        <header className="max-w-screen-2xl mx-auto px-10 py-6 fixed top-0 left-0 w-full bg-white">
             <nav className='flex justify-between items-center'>
                 {/* left side */}
                 <div className="flex items-center md:gap-16  gap-4">

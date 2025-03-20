@@ -1,8 +1,8 @@
 [
     {
       "_id": 1,
-      "title": "How to Gro e Store",
-      "description": "Learn the best strategies to grow your online store in today's competitive market.",
+      "title": "Voucher and Airtime ",
+      "description": "",
       "category": "business",
       "trending": true,
       "coverImage": "book-1.png",
@@ -16,7 +16,7 @@
       "category": "books",
       "trending": true,
       "coverImage": "book-2.png",
-      "oldPrice": 24.99,
+      "oldPricB": 24.99,
       "newPrice": 14.99
     },
     {

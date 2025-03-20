@@ -1,12 +1,17 @@
 import React from 'react';
 import Banner from './Banner';
 import TopSallers from './TopSallers';  
+import Recomanded from './Recomanded';
+import News from './News';
 
 const Home = () => {
     return (
         <>
         <Banner />  
         <TopSallers />
+        <Recomanded />
+        <News />
+        
 
         
         </>
@@ -14,4 +19,3 @@ const Home = () => {
 }
 
 export default Home;  
-// continue from 2:12:09
