@@ -8,7 +8,14 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div>
                             <h3 className="text-lg font-semibold mb-4">About Us</h3>
-                            <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</p>
+                            <p className="text-sm">
+                                We are a leading provider of technology solutions for businesses.
+                                Our team of experts is dedicated to helping you succeed in the digital world.
+                                For all your needs contact us. 
+                                <br />
+                                <em className="italic ">Efficiency is the key</em>
+
+                            </p>
                         </div>
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -21,9 +28,9 @@ const Footer = () => {
                         </div>
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-                            <p className="text-sm">123 Main Street, New York, NY 10001</p>
+                            <p className="text-sm">47 O'Reilly Street Beria</p>
                             <p className="text-sm">Phone: (123) 456-7890</p>
-                            <p className="text-sm">Email: 1Hg6l@example.com</p>            
+                            <p className="text-sm mailto:info@ontimesolutions.co.za"> Email: info@ontimesolutions.co.za</p>            
                         </div>
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>

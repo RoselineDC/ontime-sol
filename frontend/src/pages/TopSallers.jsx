@@ -29,8 +29,6 @@ const TopSallers = () => {
   const filteedBooks = selectedCategory === "Choose a Genre"
     ? books : books.filter(book => book.category === selectedCategory.toLocaleLowerCase())
   // check filtered books
-  console.log(filteedBooks)
-  console.log(books)
   return (
     <div className='py-10'>
       <h2 className='text-3xl font-semibold mb-6'>Top Sellers</h2>
