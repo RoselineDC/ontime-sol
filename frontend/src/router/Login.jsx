@@ -1,18 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaGoogle } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 
 const Login = () => {
+    // handle error on wrong credentials
+    const [message, setMessage] = useState('')
+    // handle form submission'
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
+    // handle google login
+    const handleGoogleLogin = () => {
+        // impliement function to handle google sign in
+    }
     return (
         <div className='h-[calc(100vh-120px)] flex items-center justify-center'>
             <div className="w-full max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h2 className="text-xl font-semibold mb-4">Please Login</h2>
                 {/* form */}
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                             Email
                         </label>
-                        <input type="email" name="email" id="email" placeholder="lynne@gmail.com"
+                        <input  {...register("email", { required: true })}
+                        type="email" name="email" id="email" placeholder="lynne@gmail.com"
                             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                         >
 
@@ -21,17 +35,52 @@ const Login = () => {
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                             Password                    </label>
-                        <input type="email" name="email" id="email" placeholder="ENTER PASSWORD"
+                        <input  {...register("password", { required: true })}
+                        type="password" name="password" id="password" placeholder="123@qW$5"
                             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                         >
 
                         </input>
                     </div>
+                    {/* error message */}
+                    {
+                        message && <p className="text-red-500 text-xs italic mb-3">
+                            {message}
+                        </p>
+                    }
+                    {/* buttom log in */}
+                    <div CL>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline">
+                            Login
+                        </button>
+                    </div>
                 </form>
+                <p className="align-baseline font-medium text-sm mt-4">
+                    Haven't registered yet? Please
+                    <Link to="/register" className="text-blue-500 hover:text-blue-700"> Register</Link>
+                </p>
+                {/* register using google */}
+                <div>
+                    <button onClick={{handleGoogleLogin}}
+                    className="mt-4 w-full flex flex-wrap gap-1 items-center justify-center bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+                        <FaGoogle className="mr-2" />
+                        Login with Google
+
+                    </button>
+                </div>
+                <p>
+                    <Link to="/forgot-password" className="text-blue-500 hover:text-blue-700">Forgot Password?</Link>
+
+                </p>
+                <p className="text-center text-xs mt-5 text-gray-500">
+                    ©2025  Designed by  <Link to="https://www.linkedin.com/in/roseline-dangazela-95b718324/?" className="text-blue-500 hover:text-blue-700">ROSELINE DANGAZELA</Link>
+
+
+                </p>
             </div>
         </div>
     );
 };
 
 export default Login;
-// 2:45
+// 2:45s

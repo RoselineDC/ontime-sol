@@ -7,6 +7,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import avataImg from '../assets/avatar.png';
 
+
+import { useSelector } from 'react-redux';
 const navigation = [
     {
         name: 'Dashboard', href: '/dashboard',
@@ -27,6 +29,8 @@ const navigation = [
 
 
 const Navbar = () => {
+    //  get cart items
+    const cartItems = useSelector(state => state.cart.cartItems);
     // display dropdown menu when user is logged in
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     // test outputnpm 
@@ -95,7 +99,16 @@ const Navbar = () => {
                     <Link to='/cart' className='bg-primary p-1 sm:px-6 px-2 
                     flex items-center rounded-sm'>
                         <IoCartOutline className=' ' />
-                        <span className='text-sm font-semibold sm:ml-1 ml-0'>0</span>
+                        {
+                            cartItems.length > 0 ?
+                             <span className='text-sm font-semibold sm:ml-1 ml-0'>
+                                {cartItems.length}
+
+                                </span>
+                                :
+                                <span className='text-sm font-semibold sm:ml-1 ml-0'>{ cartItems.length}</span>
+                        }
+                        {/* <span className='text-sm font-semibold sm:ml-1 ml-0'>3</span> */}
                     </Link>
                 </div>
             </nav>
