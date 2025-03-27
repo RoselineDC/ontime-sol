@@ -5,6 +5,8 @@ import App from "../App";
 import Home from "../pages/Home";
 import Login from "./Login";
 import Register from "./Register";
+import CartPage from "../pages/books/CartPage";
+
 
 
 
@@ -38,9 +40,10 @@ const router = createBrowserRouter([
                 element: <diV>About</diV>,
             },
             {
-                path: "/contact",
-                element:<div>Contact</div>,
+                path: "/cart",
+                element: <CartPage />,
             },
+            
         ],
     }
 
