@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import BookCard from './books/BookCard'
+import BookCard from './books/BookCard';
+import { useFetchAllBooksQuery } from '../redux/features/cart/booksApi'
 
 
 // for swiper
@@ -16,14 +17,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 // define categories
 const Recomanded = () => {
-  const [books, setBooks] = useState([])
-  useEffect(() => {
-    //  search for vouchers
-    fetch("products.json")
-      .then(res => res.json())
-      .then((data) => setBooks(data))
-  }, [])
-
+ const {data: books=[]} = useFetchAllBooksQuery();
+    
   // filter based of selected and present
 
   // check filtered books

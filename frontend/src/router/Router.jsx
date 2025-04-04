@@ -44,6 +44,11 @@ const router = createBrowserRouter([
                 path: "/cart",
                 element: <CartPage />,
             },
+            {
+                path: "/books/:id",
+                element: < SingleBook />,
+            }
+        
             // implement checkout
             {
                 path: "/checkout",
