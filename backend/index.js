@@ -1,50 +1,49 @@
-const express = require('express')
-const app = express()
-
-// import cors
-const cors = require('cors')
-
-// impport mongoose
+const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const bookRoutes = require('./src/books/book.route');
 
-// port
-const port = process.env.PORT || 5000
+dotenv.config();
 
+const app = express();
+const port = process.env.PORT || 5000;
 
-
-// import dotenv
-require('dotenv').config()
-
-
-// password and username for mongodb
-// C4z0qvYdsfrQMAwP
-// roselinedanga
-
-
-// middleware
-app.use(express.json())
+// Middlewarea
+app.use(express.json()); 
 app.use(cors({
-    origin: ['http://localhost:5000'],
+    origin: ['http://localhost:5173/'],
     credentials: true
-}))
+}));
 
-// ROUTES
-const bookRoutes = require('./src/books/book.route')
-app.use('/api/books', bookRoutes)
+// Routes
 
-// mongoose main function
+
+// Database Connection
 async function main() {
-    await mongoose.connect(process.env.DB_URl);
-    
-    // routes
-    app.use('/', (req, res) => {
-        res.send('Welcomme to Ontime Solutions ')
-      })
-  }
-//   call function main().catch(err => console.log(err));
-main().then(() => console.log('Connected to MongoDB')).catch(err => console.log(err));
+    try {
+        await mongoose.connect(process.env.DB_URL, {
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true
+            dbName: "ontime-store" 
+        });
+        console.log('Connected to MongoDB');
+    } catch (err) {
+        console.error('MongoDB connection error:', err);
+    }
+}
+
+app.use("/api/books", bookRoutes);
+app.get("/", (req, res) => {
+    res.send('Welcome to Ontime Solutions');
+});
+
+// Start Server
+main().then(() => {
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+});
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// http://localhost:5000

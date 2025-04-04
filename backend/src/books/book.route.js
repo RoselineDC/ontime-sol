@@ -1,24 +1,24 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
-const cors = require('cors');
-app.use(cors());
+const Book = require('./book.model');
+const { postABook } = require('./book.contoller');
+const { getAllBooks } = require('./book.contoller');
+const { getABook } = require('./book.contoller');
+const { updateABook } = require('./book.contoller');
+const { deleteABook } = require('./book.contoller');
+// Create a new book
+router.post("/create-book", postABook);
 
+// Get all books
+router.get("/", getAllBooks);
 
-// receive from db to frontend 
-router.get
-// post a book
+// Get a single book
+router.get("/:id", getABook)
 
-// submit from frontend  to database
-router.post("/create-book", async (req, res) => {
-    console.log(req.body);
-    
-})
+// update a book
+router.put("/edit/:id", updateABook);
 
-// edit or update date in database  put/pat
+// Delete a book
+router.delete("/delete/:id", deleteABook);
 
-// deale from database 
-//router.delete
-
-
-module.exports = router
+module.exports = router;
