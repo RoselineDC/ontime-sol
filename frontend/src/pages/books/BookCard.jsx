@@ -3,6 +3,8 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { href, Link } from 'react-router';
 import { useDispatch } from 'react-redux';
+import { useFetchBookByIdQuery } from '../../redux/features/cart/booksApi';
+import SingleBook from './singleBook';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 
 const BookCard = ({ book }) => {
@@ -18,7 +20,8 @@ const BookCard = ({ book }) => {
                 className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4"
             >
                 <div className="sm:h-72 sm:flex-shrink-0 border rounded-md">
-                    <Link to={`/books/${book.id}`}>
+                <Link to={`/books/${book._id}`}>
+
                         <img
                             src={`${getImgUrl(book?.coverImage)}`}
                             alt=""
@@ -28,7 +31,9 @@ const BookCard = ({ book }) => {
                 </div>
 
                 <div>
-                    <Link to={`/books/${book.id}`}>
+                <Link to={`/books/${book._id}`}>
+
+
                         <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
                             {book?.title}
                         </h3>
@@ -48,6 +53,8 @@ const BookCard = ({ book }) => {
             </div>
         </div>
     );
+    console.log(book);
+
 }
 
 export default BookCard;
