@@ -3,15 +3,27 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import { useAuth } from "../context/authContext";
 
 
 
 const Register = () => {
     // handle error on wrong credentials
     const [message, setMessage] = useState('')
+    const {registerUser} = useAuth();
     // handle form submission'
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit =  async (data) => {
+        console.log(data);
+        try {
+
+            await registerUser(data.email, data.password);
+            alert('User created successfully')
+        }
+        catch{
+            setMessage('Error creating user, please try again')
+        }
+    }
     // handle google login
     const handleGoogleLogin = () => {
         // impliement function to handle google sign in
