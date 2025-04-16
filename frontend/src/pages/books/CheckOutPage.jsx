@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/authContext";
 
 const CheckOutPage = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
@@ -10,8 +11,7 @@ const CheckOutPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     
     // TODO: Replace with actual authentication user data
-    const currentUser  = true;
-
+    const {currentUser} = useAuth();
     const [isChecked, setIsChecked] = useState(false);
 
     const onSubmit = (data) => {

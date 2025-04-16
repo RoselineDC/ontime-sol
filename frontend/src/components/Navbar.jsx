@@ -6,9 +6,10 @@ import { FaRegUser } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import avataImg from '../assets/avatar.png';
-
-
 import { useSelector } from 'react-redux';
+import { useAuth } from '../context/authContext';
+
+
 const navigation = [
     {
         name: 'Dashboard', href: '/dashboard',
@@ -35,7 +36,15 @@ const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     // test outputnpm 
     // when there is no user logged in
-    const curent_user = false;
+    const { currentUser, logoutUser } = useAuth();
+
+    //     hand le logout
+    const handleLogout = () => {
+       logoutUser();
+       
+    }
+
+
 
     return (
         <header className="max-w-screen-2xl mx-auto px-10 py-6  top-0 left-0 w-full bg-white">
@@ -62,9 +71,9 @@ const Navbar = () => {
                     <div>
                         {/* check if user is logged in */}
                         {
-                            curent_user ? <>
+                            currentUser ? <>
                                 <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                                    <img src={avataImg} alt='avatar' className={`size-7 rounded-full ${curent_user ? 'ring-2 ring-blue-500' : ''}`} />
+                                    <img src={avataImg} alt='avatar' className={`size-7 rounded-full ${currentUser ? 'ring-2 ring-blue-500' : ''}`} />
                                 </button>
                                 {/* show dropdown menu */}
                                 {
@@ -80,6 +89,13 @@ const Navbar = () => {
                                                         </li>
                                                     ))
                                                 }
+                                                <li >
+                                                    <button className='block py-2 hover:bg-gray-100  px-4 rounded-md text-sm'
+                                                    onClick={handleLogout}>
+                                                        Logout
+                                                    </button>
+                                                    
+                                                </li>
                                             </ul>
                                         </div>
                                     )
@@ -101,12 +117,12 @@ const Navbar = () => {
                         <IoCartOutline className=' ' />
                         {
                             cartItems.length > 0 ?
-                             <span className='text-sm font-semibold sm:ml-1 ml-0'>
-                                {cartItems.length}
+                                <span className='text-sm font-semibold sm:ml-1 ml-0'>
+                                    {cartItems.length}
 
                                 </span>
                                 :
-                                <span className='text-sm font-semibold sm:ml-1 ml-0'>{ cartItems.length}</span>
+                                <span className='text-sm font-semibold sm:ml-1 ml-0'>{cartItems.length}</span>
                         }
                         {/* <span className='text-sm font-semibold sm:ml-1 ml-0'>3</span> */}
                     </Link>

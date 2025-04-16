@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { signInWithPopup } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { useState } from "react";   
 
 
@@ -40,6 +41,7 @@ export const AuthProvide = ({ children }) => {
     // logout user
     const logoutUser = () => {
         return signOut(auth);
+
     }
 
     // manage user state
@@ -53,7 +55,7 @@ export const AuthProvide = ({ children }) => {
                 const{email, displayName, photoURL} = user;
                 const userData = {
                     email,
-                    displayName,
+                    userName: displayName,
                     photoURL
                 }
             }
@@ -74,8 +76,7 @@ export const AuthProvide = ({ children }) => {
     };
     return (
         <AuthContext.Provider value={value}>
-            {children}
-           
+            {children}           
         </AuthContext.Provider>
     );
 }
