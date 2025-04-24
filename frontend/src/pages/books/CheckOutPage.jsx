@@ -3,18 +3,21 @@ import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
+import Swal from "sweetalert2";
+import { useCreateOrderMutation } from "../../redux/features/oders/orderApi";
 
 const CheckOutPage = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const totalPrice = cartItems.reduce((acc, item) => acc + item.newPrice, 0).toFixed(2);
-
+    const { currentUser } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     
-    // TODO: Replace with actual authentication user data
-    const {currentUser} = useAuth();
+    const [createOrder,  {isLoading, error}] = useCreateOrderMutation();
+    
     const [isChecked, setIsChecked] = useState(false);
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
+        
         const newOrder = {
             name: data.name,
             email: currentUser?.email,
@@ -29,8 +32,24 @@ const CheckOutPage = () => {
             totalPrice: totalPrice,
         };
         
-        console.log(newOrder);
+       try{
+        await createOrder(newOrder).unwrap();
+        Swal.fire({
+            title: "Confirmed Order",
+            text: "Order placed successfully!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, it's Okay!"          
+          });
+                  
+       }catch(error){
+        console.error("Error placing order!! ", error);
+        alert("Error placing order, please log in.");
+       }
     };
+    if(isLoading) return <p>Loading...</p>;
 
     return (
         <section>

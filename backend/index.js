@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bookRoutes = require('./src/books/book.route');
+const orderRoutes = require('./src/orders/order.route');
 
 dotenv.config();
 
@@ -34,6 +35,8 @@ async function main() {
 }
 
 app.use("/api/books", bookRoutes);
+app.use("/api/orders", orderRoutes);
+
 app.get("/", (req, res) => {
     res.send('Welcome to Ontime Solutions');
 });
