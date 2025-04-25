@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import BookCard from './books/BookCard'
-import { useFetchAllBooksQuery } from '../redux/features/cart/booksApi' 
+import { useFetchAllBooksQuery } from '../redux/features/books/booksApi' 
 
 // for swiper
 import { Swiper, SwiperSlide } from 'swiper/react';

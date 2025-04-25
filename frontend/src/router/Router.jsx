@@ -9,6 +9,7 @@ import CartPage from "../pages/books/CartPage";
 import CheckOutPage from "../pages/books/CheckOutPage";
 import SingleBook from "../pages/books/singleBook";
 import PrivateRoute from "./PrivateRoute";
+import OrderPage from "../pages/books/orderPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -33,8 +34,8 @@ const router = createBrowserRouter([
                 element: <div>Dashboard</div>,
             },
             {
-                path: "/products",
-                element: <div>Products</div>,
+                path: "/orders",
+                element: <OrderPage /> ,
             },
             {
                 path: "/about",
@@ -61,4 +62,4 @@ const router = createBrowserRouter([
 
 ]);
 
-export default router;
+  

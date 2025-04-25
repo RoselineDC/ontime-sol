@@ -3,7 +3,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { getImgUrl } from '../../utils/getImgUrl';
 import { href, Link } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { useFetchBookByIdQuery } from '../../redux/features/cart/booksApi';
+import { useFetchAllBooksQuery } from '../../redux/features/books/booksApi';
 import SingleBook from './singleBook';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 

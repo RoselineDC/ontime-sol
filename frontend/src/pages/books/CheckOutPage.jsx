@@ -5,19 +5,25 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import Swal from "sweetalert2";
 import { useCreateOrderMutation } from "../../redux/features/oders/orderApi";
+import { useNavigate } from "react-router-dom";
 
 const CheckOutPage = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const totalPrice = cartItems.reduce((acc, item) => acc + item.newPrice, 0).toFixed(2);
     const { currentUser } = useAuth();
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    
-    const [createOrder,  {isLoading, error}] = useCreateOrderMutation();
-    
+    const {
+         register, 
+         handleSubmit,
+          formState: { errors } 
+        } = useForm();
+         
+
+    const [createOrder, { isLoading, error }] = useCreateOrderMutation();
+    const navigate = useNavigate();    
     const [isChecked, setIsChecked] = useState(false);
 
     const onSubmit = async (data) => {
-        
+
         const newOrder = {
             name: data.name,
             email: currentUser?.email,
@@ -31,25 +37,26 @@ const CheckOutPage = () => {
             productIds: cartItems.map(item => item?._id),
             totalPrice: totalPrice,
         };
-        
-       try{
-        await createOrder(newOrder).unwrap();
-        Swal.fire({
-            title: "Confirmed Order",
-            text: "Order placed successfully!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, it's Okay!"          
-          });
-                  
-       }catch(error){
-        console.error("Error placing order!! ", error);
-        alert("Error placing order, please log in.");
-       }
+
+        try {
+            await createOrder(newOrder).unwrap();
+            Swal.fire({
+                title: "Confirmed Order",
+                text: "Order placed successfully!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, it's Okay!"
+            });
+            navigate("/orders");
+
+        } catch (error) {
+            console.error("Error placing order!! ", error);
+            alert("Error placing order, please log in.");
+        }
     };
-    if(isLoading) return <p>Loading...</p>;
+    if (isLoading) return <div>Loading...</div>;
 
     return (
         <section>
@@ -121,12 +128,11 @@ const CheckOutPage = () => {
                                         </div>
 
                                         <div className="md:col-span-5 text-right">
-                                            <button 
+                                            <button
                                                 type="submit"
                                                 disabled={!isChecked}
-                                                className={`py-2 px-4 rounded font-bold text-white ${
-                                                    isChecked ? "bg-blue-500 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"
-                                                }`}
+                                                className={`py-2 px-4 rounded font-bold text-white ${isChecked ? "bg-blue-500 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"
+                                                    }`}
                                             >
                                                 Place an Order
                                             </button>

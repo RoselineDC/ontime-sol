@@ -15,9 +15,27 @@ const createOrder = async (req, res) => {
     
 }
 
+// get all orders by id
+const getOrdersByEmail = async (req, res) => {
+    try {
+        const {email} = req.params;
+        const orders = await Order.find(
+            { email }).sort({ createdAt: -1 });
+        if (!orders) {
+            return res.status(404).json({ message: "No orders found" });
+        }
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error("error getting orders", error);
+        res.status(500).send({ message: "Failed to get orders" });
+    }
+
+}
+
 
 
 
 module.exports = {
     createOrder,
+    getOrdersByEmail
 }

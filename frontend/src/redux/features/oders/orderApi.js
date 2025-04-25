@@ -10,15 +10,26 @@ const orderApi = createApi({
     tagTypes: ['Orders'],
     endpoints: (builder) => ({
         createOrder: (builder.mutation)({
-            query: (orderData) => ({
-                url: '/createOrder',
+            query: (newOrder ) => ({
+                url: '/',
                 method: 'POST',
-                body: orderData,
+                body: newOrder,
                 headers: {
                     'Content-Type': 'application/json',
                 },
             }),
             invalidatesTags: ['Orders'],
+        }),
+        getOrdersByEmail: (builder.query)({
+            query: (email) => ({
+                url: `/email/${email}`,
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }),
+            providesTags: ['Orders'],
+            
         }),
     }),
 
@@ -26,6 +37,7 @@ const orderApi = createApi({
 
 export const {
     useCreateOrderMutation,
+    useGetOrdersByEmailQuery,
 } = orderApi;
 
 export { orderApi };
