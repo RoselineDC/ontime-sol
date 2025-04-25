@@ -23,6 +23,12 @@ const CheckOutPage = () => {
     const [isChecked, setIsChecked] = useState(false);
 
     const onSubmit = async (data) => {
+        if (!currentUser?.email) {
+            alert("Please log in to place an order.");
+            return;
+        }   
+        console.log("Current User:", currentUser);
+
 
         const newOrder = {
             name: data.name,
