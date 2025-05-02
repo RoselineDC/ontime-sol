@@ -9,7 +9,7 @@ const path = require('path');
   await page.goto(`file://${filePath}`, { waitUntil: 'networkidle0' });
 
   await page.pdf({
-    path: 'Roseline Dangazela CV.pdf',
+    path: 'Roseline Dangazela C-V.pdf',
     format: 'A4',
     printBackground: true,
   });

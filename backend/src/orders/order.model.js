@@ -29,11 +29,17 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    productIds: {
+    // productIds: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Book',
+    //     required: true,
+    // },
+    productIds: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book',
-        required: true,
-    },
+        required: true
+    }],
+    
     totalPrice: {
         type: Number,
         required: true,

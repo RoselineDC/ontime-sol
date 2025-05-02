@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bookRoutes = require('./src/books/book.route');
 const orderRoutes = require('./src/orders/order.route');
+const userRoutes = require('./src/users/user.route');
+
 
 dotenv.config();
 
@@ -17,8 +19,6 @@ app.use(cors({
     credentials: true
   }));
   
-// Routes
-
 
 // Database Connection
 async function main() {
@@ -36,6 +36,7 @@ async function main() {
 
 app.use("/api/books", bookRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/auth", userRoutes);
 
 app.get("/", (req, res) => {
     res.send('Welcome to Ontime Solutions');
