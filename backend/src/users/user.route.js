@@ -1,10 +1,14 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const  User = require('./user.model');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+
+dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET
 
 router.post("/admin", async (req, res) => {
+    
    const { username, password } = req.body;
    try{
     const admin = await User.findOne({ username });
