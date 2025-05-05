@@ -11,7 +11,16 @@ import SingleBook from "../pages/books/singleBook";
 import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/books/orderPage.jsx";
 import AdminRoute from "./AdminRoute";
+import AdminLogin from "../components/AdminLodin.jsx";
+import DashboardLayout from "../pages/dashboard/DashboardLayout..jsx";
+import Dashboard from "../pages/dashboard/dashboard.jsx";
+// import RevenueChart from "../pages/dashboard/RevenueChart.jsx";
+// import TopSallers from "../pages/dashboard/TopSallers.jsx";
+// import Recomanded from "../pages/dashboard/Recomanded.jsx";
+// import News from "../pages/dashboard/News.jsx";
 
+
+  
 
 const router = createBrowserRouter([
     {
@@ -58,15 +67,17 @@ const router = createBrowserRouter([
     },
     {
         path: "/admin",
-        element: <div>Admin Login</div>,
+        element:<AdminRoute> <AdminLogin /> </AdminRoute>,//< AdminLogin/>,
     },
     {
         path: "/dashboard",
-        element: <AdminRoute><div>Admin Dashboard</div></AdminRoute>,
+        element: <AdminRoute>
+            <DashboardLayout />
+        </AdminRoute>,
         children: [
             {
                 path: " ",
-                element:<AdminRoute><div>Dashboard Home</div></AdminRoute> ,
+                element:<AdminRoute><Dashboard /> </AdminRoute> ,
             },
             {
                 path: "add-new-book",
