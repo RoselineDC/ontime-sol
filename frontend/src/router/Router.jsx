@@ -1,3 +1,4 @@
+
 import { createBrowserRouter }
     from "react-router";
 import App from "../App";
@@ -12,15 +13,12 @@ import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/books/orderPage.jsx";
 import AdminRoute from "./AdminRoute";
 import AdminLogin from "../components/AdminLodin.jsx";
-import DashboardLayout from "../pages/dashboard/DashboardLayout..jsx";
+import DashboardLayout from "../pages/dashboard/DashboardLayout.jsx";
 import Dashboard from "../pages/dashboard/dashboard.jsx";
-// import RevenueChart from "../pages/dashboard/RevenueChart.jsx";
-// import TopSallers from "../pages/dashboard/TopSallers.jsx";
-// import Recomanded from "../pages/dashboard/Recomanded.jsx";
-// import News from "../pages/dashboard/News.jsx";
 
 
-  
+
+
 
 const router = createBrowserRouter([
     {
@@ -29,7 +27,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home  />,
+                element: <Home />,
             },
             {
                 path: "/login",
@@ -39,10 +37,11 @@ const router = createBrowserRouter([
                 path: "/register",
                 element: <Register />,
             },
-            
+
             {
                 path: "/about",
-                element: <diV>About</diV>,
+                element: <div>About</div>,
+
             },
             {
                 path: "/cart",
@@ -52,7 +51,7 @@ const router = createBrowserRouter([
                 path: "/books/:id",
                 element: < SingleBook />,
             },
-        
+
             // implement checkout
             {
                 path: "/checkout",
@@ -62,22 +61,22 @@ const router = createBrowserRouter([
                 path: "/orders",
                 element: <PrivateRoute><OrderPage /></PrivateRoute>,
             },
-            
+
         ],
     },
     {
         path: "/admin",
-        element:<AdminRoute> <AdminLogin /> </AdminRoute>,//< AdminLogin/>,
+        element: <AdminLogin />,
     },
     {
         path: "/dashboard",
         element: <AdminRoute>
-            <DashboardLayout />
+           <DashboardLayout />,
         </AdminRoute>,
         children: [
             {
-                path: " ",
-                element:<AdminRoute><Dashboard /> </AdminRoute> ,
+                path: "",
+                element: <AdminRoute>dASHBORAD CHILED</AdminRoute>,
             },
             {
                 path: "add-new-book",
