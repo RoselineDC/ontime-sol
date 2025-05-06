@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <AdminRoute>dASHBORAD CHILED</AdminRoute>,
+                element: <AdminRoute><Dashboard /></AdminRoute>,
             },
             {
                 path: "add-new-book",
