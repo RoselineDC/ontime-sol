@@ -15,6 +15,9 @@ import AdminRoute from "./AdminRoute";
 import AdminLogin from "../components/AdminLodin.jsx";
 import DashboardLayout from "../pages/dashboard/DashboardLayout.jsx";
 import Dashboard from "../pages/dashboard/dashboard.jsx";
+import ManageBooks from "../pages/dashboard/managebook/manageBooks.jsx";
+import AddBook from "../pages/dashboard/addbook/addBook.jsx";
+import InputField from "../pages/dashboard/addbook/InputField.jsx";
 
 
 
@@ -80,15 +83,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "add-new-book",
-                element: <AdminRoute><div>Add New Book</div></AdminRoute>,
+                element: <AdminRoute><AddBook/></AdminRoute>,
             },
             {
                 path: "edit-book/:id",
-                element: <AdminRoute><div>Edit Book</div></AdminRoute>,
+                element: <AdminRoute><InputField /></AdminRoute>,
             },
             {
                 path: "manage-books",
-                element: <AdminRoute><div>Manage Books</div></AdminRoute>,
+                element: <AdminRoute><ManageBooks /></AdminRoute>,
             }
         ]
 
