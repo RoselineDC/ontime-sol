@@ -8,7 +8,7 @@ const AdminRoute = ({ children }) => {
     if (!token) {
         return <Navigate to="/admin" />;
     }
-    return children ? children : <Outlet />;
+    return children ? children : <Outlet/>;
      
 }
 
