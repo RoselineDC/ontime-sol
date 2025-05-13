@@ -68,6 +68,7 @@ const AddBook = () => {
           placeholder="Enter book description"
           type="textarea"
           register={register}
+          
 
         />
 
