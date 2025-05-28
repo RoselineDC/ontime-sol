@@ -81,8 +81,8 @@ Contributions are welcome! To contribute:
 ## 📬 Contact
 
 For inquiries or support, please contact:
-📧 \[[your-email@example.com](mailto:your-email@example.com)]
-📞 +27 xxx xxx xxxx
+📧 \[[roseline.danga@gmail.com](mailto:your-email@example.com)]
+📞 +27 745 663 399
 
 ---
 
