@@ -15,7 +15,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 
 // define categories
-const categories = ["Choose a Genre", "Business", "Fiction", "Horror", "Adventure", "Non-fiction", "Marketing"]
+const categories = ["Choose A Genre", "AIRTIME", "PREPAIRED", "GAMING", "BILL PAYMENT", "MONEY MARKET", "OTHERS"]
 const TopSallers = () => {
     const [selectedCategory, setSelectedCategory] = useState("Choose a Genre")
     const {data: books=[]} = useFetchAllBooksQuery();
@@ -23,7 +23,7 @@ const TopSallers = () => {
 
   // filter based of selected and present
   const filteedBooks = selectedCategory === "Choose a Genre"
-    ? books : books.filter(book => book.category === selectedCategory.toLocaleLowerCase())
+    ? books : books.filter(book => book.category === selectedCategory)
   // check filtered books
   return (
     <div className='py-10'>

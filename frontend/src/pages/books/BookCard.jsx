@@ -24,7 +24,7 @@ const BookCard = ({ book }) => {
 
                         <img
                             src={`${getImgUrl(book?.coverImage)}`}
-                            alt=""
+                            alt="book1"
                             className="w-full bg-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
                         />
                     </Link>
@@ -41,7 +41,7 @@ const BookCard = ({ book }) => {
 
                     <p className="text-gray-600 mb-5">{book.description.length > 70 ? `${book?.description.slice(0, 60)}...` : book.description}</p>
                     <p className="font-medium mb-5">
-                        ${book?.newPrice} <span className="line-through font-normal ml-2">${book?.oldPrice}</span>
+                        R{book?.newPrice} <span className="line-through font-normal ml-2">R{book?.oldPrice}</span>
                     </p>
                     <button 
                     onClick={() => handleAddToCart(book)}

@@ -25,7 +25,7 @@ const Recomanded = () => {
 
   return (
     <div className='py-10'>
-      <h2 className='text-3xl font-semibold mb-6'>Recomanded for you</h2>
+      <h2 className='text-3xl font-semibold mb-6'>Recomanded for You</h2>
       {/* {/category fiter*/}
       <div className='mb-8 flex items-center'    >
       </div>
@@ -39,7 +39,7 @@ const Recomanded = () => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 40,
           },
           1024: {
@@ -56,7 +56,7 @@ const Recomanded = () => {
       >
         {
           // present based on filtering
-          books.length > 0 && books.slice(8, 16).map((book, index) => (
+          books.length > 0 && books.slice(1, 5).map((book, index) => (
             <SwiperSlide key={index}>
               <BookCard book={book} />
             </SwiperSlide>
