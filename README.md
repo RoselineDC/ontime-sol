@@ -26,21 +26,6 @@ Ontime Solutions is a web application that provides essential digital services i
 - Express.js  
 - MongoDB for database operations
 
-## 📂 Project Structure
-
-```
-
-ontime-sol/
-│
-├── backend/          # Node.js server and API logic
-├── frontend/         # Frontend code (HTML, CSS, JavaScript)
-├── lynnecv/          # \[Optional] Additional components or modules
-├── .vscode/          # VSCode workspace settings
-├── .gitignore
-└── README.md         # Project documentation
-
-````
-
 ## 🚀 Getting Started
 
 1. **Clone the repository**
