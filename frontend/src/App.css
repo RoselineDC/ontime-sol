@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 .root {
-   --bg-primary: #FFce1a;
+   --bg-primary: #077245;
    --bg-secondary: #0d0842;
    --bg-favorite: #FF5841;
    --bg-black: #F3F3F3;
@@ -44,7 +44,7 @@
  }
 
  .btn-primary {
-       background-color:#FFce1a;
+       background-color:#f56410;
        color: var(--bg-secondary);
        padding-left: 3rem;
        padding-right: 3rem;
@@ -59,7 +59,7 @@
    }
    .btn-primary:hover {
        background-color: #0d0842;
-       color: white;
+       color: rgb(255, 255, 255);
  }
 
 .html{
