@@ -1,406 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>ROSELINE DANGAZELA</title>
-    <!-- link styles -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <style>
-        body {
-            margin: 10px;
-            font-family: Arial, sans-serif;
-        }
+  </head>
+  <style>
+    .skills-section {
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
 
-        .banner {
-            display: flex;
-            max-width: 1200px;
-            margin: auto;
-        }
+    .skills-section h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        .profile-pic {
-            background-color: white;
-            padding: 20px;
-        }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
 
-        .profile-pic img {
-            width: 150px;
-            height: 140px;
-            border-radius: 5px;
-            /* border: 2px solid #6e6d67; */
-            object-fit: cover;
-            margin-left: 40px;
-        }
+    .skills-grid h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
 
-        .info {
-            background-color: grey;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            height: 120px;
-        }
+    .skills-grid ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
 
-        .info h1 {
-            margin: 0;
-            font-size: 42px;
-            line-height: 1.6;
-        }
+    .skills-grid li {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
 
-        .info h2 {
-            margin: 10px 0 0;
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 1.6;
-            padding-bottom: 10px;
-        }
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-        .body-section {
-            display: block;
-            margin-left: 120px;
-            margin-top: 20px;
-        }
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <body>
+    <section>
+      <h1>Roseline Dangazela</h1>
+      <h3>Junior Full Stack Developer</h3>
+      <div style="display: flex; flex-direction: row; font: 1em sans-serif">
+        Pretoria | South Africa | +27 676 470 632| roseline.danga@gmail.com
+      </div>
 
-        .highlighted-title1 h2 {
-            width: 160px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            font-weight: normal;
+      <h2>PROFESSIONAL SUMMARY</h2>
+      <p>
+        Product-focused Junior Full Stack Developer with 1 year of hands-on
+        experience building and deploying web applications using MERN Stack,
+        Next.js, Python, and Firebase. Skilled in working with both MongoDB and
+        MySQL, I’ve delivered solutions for clients in media, fintech,
+        production, and nonprofit sectors. I bring a strong eye for detail, a
+        passion for clean, efficient code, and a commitment to building
+        reliable, user-friendly products that solve real-world problems
+      </p>
+      <h2>EXPERIENCE</h2>
+      <div>
+        <div
+          classname="experience"
+          style="display : flex, flext-direction: column"
+        >
+          <h4>Junior Procurement Analyst</h4>
+          <p>
+            <i
+              >Procument Analyst | Hinc Group Pyt Ltd-Pretoria, Gauteng, South
+              Africa</i
+            >
+          </p>
+          <p>April 2024 to May 2025</p>
+          <ul>
+            <li>
+              Built a web scraper to find tenders and contact suppliers for
+              quotes—cut sourcing time by 50% and increased bid response
+              efficiency
+            </li>
+            <li>
+              Analyzed supplier and pricing data to support cost-saving
+              decisions—reduced procurement costs by 15% through optimized
+              sourcing
+            </li>
+            <li>
+              Managed digital bid and tender records, improving data accuracy
+              and speeding up access by 40%.
+            </li>
+            <li>
+              Digitized procurement documents and automated repetitive tasks—cut
+              manual workload by 30%
+            </li>
+            <li>
+              Used online tender platforms effectively, winning multiple bids
+              and increasing contract awards by 20%.
+            </li>
+            <li>
+              Handled sensitive financial data securely, ensuring full audit
+              compliance and trust.
+            </li>
+          </ul>
 
-        }
-
-        h2 {
-            font-size: 14px;
-            margin: 10px 0;
-        }
-
-        .highlighted-title1 .email {
-            padding-top: 5px;
-            text-decoration: underline;
-        }
-
-        .highlighted-title1 .email:hover {
-            color: #0000ff;
-        }
-
-        .highlighted-title1 p {
-            margin: 0;
-        }
-
-        .highlighted-title1 {
-            margin-bottom: 50px;
-        }
-
-        .highlighted-title2 {
-            padding-bottom: 40px;
-        }
-
-        .highlighted-title2 h2 {
-            width: 210px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            font-weight: normal;
-        }
-
-        .highlighted-title2 p {
-            margin: 0;
-            max-width: 72%;
-            line-height: 1.6;
-        }
-
-        .highlighted-title3 h2 {
-            width: 150px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            font-weight: normal;
-        }
-
-        .highlighted-title3 b {
-            margin: 0;
-            max-width: 72%;
-            line-height: 1.6;
-            padding: auto;
-
-        }
-
-        span {
-            padding-top: 20px;
-            max-width: 72%;
-            color: grey;
-            line-height: 1.6;
-        }
-
-        .highlighted-title3 ul {
-            margin: 0;
-            max-width: 72%;
-            line-height: 1.6;
-        }
-
-        .highlighted-title4 h2 {
-            width: 110px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            font-weight: normal;
-        }
-
-        .highlighted-title4 .current {
-            margin: 0;
-            max-width: 72%;
-            line-height: 1.6;
-        }
-
-        .highlighted-title5 h2 {
-            width: 60px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            /* margin-bottom: 30px; */
-            margin-top: 50px;
-            /* font-weight: normal; */
-        }
-
-        .listfoursty ul {
-            columns: 3;
-            -webkit-columns: 3;
-            -moz-columns: 3;
-            column-gap: 40px;
-            /* list-style-type: none; */
-            padding: 0;
-            margin: 0;
-        }
-
-        .listfoursty li {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .highlighted-title6 h2 {
-            width: 70px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            /* font-weight: normal; */
-        }
-
-        .highlighted-title6 a {
-            margin: 0;
-            max-width: 72%;
-            line-height: 1.6;
-            text-decoration: none;
-            color: #717175;
-        }
-
-        .highlighted-title7 h2 {
-            width: 140px;
-            height: 25px;
-            background-color: #181815;
-            color: #ffffff;
-            /* text-align: center; */
-            padding-top: 5px;
-            padding-left: 10px;
-            /* font-weight: normal; */
-        }
-
-        .highlighted-title7 {
-            margin-bottom: 50px;
-        }
-        
-           
-    </style>
-</head>
-
-<body>
-    <div class="banner">
-        <div class="profile-pic">
-            <img src="profilr.png" alt="Profile Image" class="profile-image">
+          <h4>Office Assistant</h4>
+          <p>
+            <i>Chix Marketing | Pretoria, Gauteng, South Africa</i>
+          </p>
+          <p>August 2020 to January 2024</p>
+          <ul>
+            <li>
+              Organized and managed office operations, including scheduling,
+              inventory management, and customer service.
+            </li>
+            <li>
+              Provided day-to-day administrative support, including scheduling,
+              calendar management, and correspondence handling.
+            </li>
+            <li>
+              Managed all incoming and outgoing mail and deliveries, ensuring
+              timely and accurate distribution.
+            </li>
+            <li>
+              Assisted in the preparation and distribution of invoices and other
+              financial documents, ensuring accuracy and prompt payment.
+            </li>
+            <li>
+              Provided customer service and support, addressing inquiries,
+              complaints, and concerns, and ensuring customer satisfaction.
+            </li>
+            <li>
+              Supported the coordination of meetings, events, and conferences by
+              preparing logistics, materials, and IT setup
+            </li>
+          </ul>
         </div>
-        <div class="info">
-            <h1>ROSELINE<br>DANGAZELA</h1>
-            <h2>Full Stack Software Engineer</h2>
+      </div>
+      <div class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div>
+            <h4>Languages</h4>
+            <ul>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>C</li>
+              <li>SQL</li>
+              <li>HTML/CSS</li>
+              <li>Node.js</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Libraries & Frameworks</h4>
+            <ul>
+              <li>React.js</li>
+              <li>Next.js</li>
+              <li>Redux</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Databases</h4>
+            <ul>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Soft Skills</h4>
+            <ul>
+              <li>Strategic Planning</li>
+              <li>Problem Solving</li>
+              <li>Fast Execution</li>
+              <li>Time Management</li>
+              <li>Leadership</li>
+              <li>Effective Communication</li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <div class="body-section">
-        <div class="highlighted-title1">
-            <h2>
-                PERSONAL DETAILS
-            </h2>
-            <P><b>C</b>ontact</P>
-            <p mailto="roseline.danga@gmail.com" class="email">roseline.danga@gmail.com</p>
-            <p tel="+27 745663399" class="phone"> +27 745663399</p>
+      </div>
+      <div class="projects-section">
+        <h2>KEY PROJECTS</h2>
+        <div class="projects-grid">
+          <div>
+            <h4>Automated Tender Scraper</h4>
+            <p>A tender scrapper website that is resposible for automated tender scrapping and displaying on a dashboard also has features for sending emails for request for quotations and notifiying user of the new srapped tenders via email</p>
+            <p> Technology used: Python, Scrapy, Next.js, TypeScript, Tailwind CSS, SQLITE, Cron Job,Bash</p>
+           <li>Built a full-stack tool to automate Transnet tender scraping and filtering
+
+           </li> 
+           <li>Targeted “Supply and Deliver” tenders to streamline procurement relevance</li>
+           <li>Automated daily scraping with cron jobs for real-time updates</li>
+           <li>Automatically sent Request for Quotations (RFQs) to suppliers upon new tender detection</li>
+           <li>Integrated with Next.js and Tailwind CSS for a visually appealing and responsive user interface</li>
+
+          </div>
+          <div>
+            <h4>Ontime Solutions Website</h4>
+            <p> A website that is resposible for providing services for OnTime Solutions</p>
+            <p>Technology Used: React Js, Redux,Tailwind CSS, Node.js, Express.js, Firebase</p>
+            <li>Created a dynamic and user-friendly website for OnTime Solutions</li>
+            <li>Implemented a responsive design with Next.js and Tailwind CSS</li>
+            <li>Integrated secure payment gateways and APIs to ensure fast, reliable, and safe transactions for users.</li>
+            <li>Implemented a secure authentication system using Firebase</li>          
+            
+          </div>
+          
         </div>
-        <div class="highlighted-title2">
-            <h2> PROFESSIONAL SUMMARY</h2>
-            <p>
-                Experienced Full Stack Software Engineer with a strong background
-                in designing and implementing scalable applications. <br>
-                Proven track record of developing efficient code,
-                debugging complex issues, and collaborating with crossfunctional teams
-                to deliver top-notch solutions.
-            </p>
+      </div>
+      <div class="education-section">
+        <h2>Education</h2>
+        <div class="education-grid">
+          <div>
+            <h4>Computer Science</h4>
+            <p>University of the Philippines, Manila</p>
+            <p>2022 - Present</p>
+          </div>
         </div>
-        <div class="highlighted-title3">
-            <h2>
-                WORK EXPERIENCE
-            </h2>
-            <div>
-                <b style="text-transform: uppercase;">
-                    Full Stack Developer | Contract Ontime Solutions, Johannesburg
-                </b>
-                <br><span>10/2024 - Present </span>
-
-                <p>
-                <ul>
-                    <li>
-                        Engineering and deploying full-stack applications using React,
-                        Redux.js, JavaScript, Tailwind CSS, and Express.js,
-                        enhancing user experience and application performance.
-                    </li>
-                    <li>
-                        Leading the development of Ontime Solutions' web app, a company
-                        website, achieving seamless integration with MongoDB,
-                        and optimizing data handling through Sequelize ORM.
-                    </li>
-                    <li>
-                        Optimizing server operations with Nginx and AWS Cloud significantly
-                        improves system reliability and performance.
-                    </li>
-                    <li>
-                        Overseeing application deployment, streamlining version control,
-                        continuous integration, and automated deployments, leading to a more
-                        efficient development workflow.
-                    </li>
-                </ul>
-                </p>
-
-                <b>
-                    PROCUMENT ANALYST HINC GROUP PYT LTD, PRETORIA | REMOTE
-                </b>
-                <br>
-                <span>
-                    04/2024 - 03/2025
-                </span>
-                <p>
-                <ul>
-                    <li>
-                        Determined consumer needs to provide products and services
-                        appealing to larger market.
-                    </li>
-                    <li>
-                        Organized client meetings to provide project updates.
-                    </li>
-                    <li>
-                        Monitored operations and reviewed records and metrics to understand
-                        company performance.
-                    </li>
-                    <li>
-                        Oversaw quality control to identify inconsistencies and malfunctions.
-                    </li>
-
-                </ul>
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="highlighted-title4">
-            <h2>EDUCATION</h2>
-            <div class="current">
-                <div>
-                    <b style="text-transform: uppercase;">
-                        BACHELOR OF SCIENCE IN COMPUTER SCIENCE | 
-                        <em>UNIVERSITY OF PEOPLE, Pasadena, California, U S A</em>
-                    </b>
-                    <span> 01/2024 - Present</span>
-                </div>
-                <hr>
-                <div>
-                    <b style="text-transform: uppercase;">
-                        Software Engineering Bootcamp | <em> ALX-AFRICA / HOLBERTON, Remote, South Africa</em>
-                       
-                    </b><br>
-                    <span> 10/2022 – 04/2024</span>
-
-                </div>
-            </div>
-        </div>
-        <div class="highlighted-title5">
-            <h2>
-                SKILLS
-            </h2>
-            <div class="listfoursty">
-                <ul>
-                    <li>
-                        JavaScript
-                    </li>
-                    <li>
-                        Python
-                    </li>
-                    <li>
-                        C
-                    </li>
-                    <li>
-                        JAVA
-                    </li>
-                    <li>
-                        Node.js & Express.js
-                    </li>
-                    <li>
-                        DJANGO & FLASK
-                    </li>
-                    <li>
-                        React.js & Redux.js
-                    </li>
-                    <li>
-                        Tailwind CSS & Bootstrap
-                    </li>
-                    <li>
-                        SQL & NoSQL
-                    </li>
-                    <li>
-                        Git & Version Control
-                    </li>
-                    <li>
-                        Shell Scripting
-                    </li>
-                    <li>
-                        Technical Writting
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        <div class="highlighted-title6">
-            <h2> LINKS </h2>
-            <a href="">Github</a><br>
-            <a href="">LinkedIn Profile</a>
-        </div>
-        <div class="highlighted-title7" >
+      </div>
+      <div class="certificates">
+        <h2> Certifications and Licenses</h2>
+        <div class="certificates-grid">
+          <div>
+            <h4>Software Engineering Bootcamp</h4>
+            <p>ALX-Africa</p>
+            <p>2022 - Present</p>
+          </div>
+         
+        <hr>
+        <br>
+        <div class="highlighted-title7">
             <h2 style="text-transform: uppercase;">Apprenticeships</h2>
             <div>
                 <b style="text-transform: uppercase;">
@@ -420,9 +262,9 @@
                     </li>
                 </ul>
             </div>
-          
+
             <hr>
-              
+
             <div>
                 <b style="text-transform: uppercase;">
                     Developer Apprentice | Forage
@@ -460,8 +302,14 @@
             </div>
         </div>
     </div>
-    </div>
+     <div class="highlighted-title6">
+            <h2> LINKS </h2>
+            <a href="">Github</a><br>
+            <a href="">LinkedIn Profile</a>
+        </div>
 
-</body>
+      </div>
 
+    </section>
+  </body>
 </html>
